@@ -18,7 +18,7 @@
 
 Summary:        Allows Ruby scripts to interface with a SQLite3 database
 Name:           %{?scl_prefix}rubygem-%{gem_name}
-Version:        1.3.13
+Version:        1.4.2
 Release:        %{release_prefix}%{?dist}.cpanel
 Group:          Development/Languages
 License:        BSD
@@ -87,9 +87,9 @@ popd
 %files
 %{gem_extdir_mri}
 %dir %{gem_instdir}
-%if 0%{rhel} > 6
 %exclude %{gem_instdir}/.gemtest
-%endif
+%exclude %{gem_instdir}/.travis.yml
+%exclude %{gem_instdir}/appveyor.yml
 %doc %{gem_instdir}/README.rdoc
 %doc %{gem_instdir}/LICENSE
 %exclude %{gem_instdir}/ext
@@ -107,9 +107,12 @@ popd
 %{gem_instdir}/setup.rb
 %doc %{gem_docdir}
 %doc %{gem_instdir}/faq/
-%{gem_instdir}/tasks/
+%{gem_instdir}/rakelib/
 %{gem_instdir}/test/
 
 %changelog
+* Wed Jan 22 2020 Cory McIntire <cory@cpanel.net> - 1.4.2-1
+- EA-8847: Update scl-ruby24-rubygem-sqlite3 from v1.3.13 to v1.4.2
+
 * Mon Apr 17 2017 Rishwanth Yeddula <rish@cpanel.net> 2.0.1-1
 - initial packaging
