@@ -14,7 +14,7 @@
 %{?scl:%scl_package rubygem-%{gem_name}}
 
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4590 for more details
-%define release_prefix 1
+%define release_prefix 2
 
 Summary:        Allows Ruby scripts to interface with a SQLite3 database
 Name:           %{?scl_prefix}rubygem-%{gem_name}
@@ -111,6 +111,9 @@ popd
 %{gem_instdir}/test/
 
 %changelog
+* Tue Dec 28 2021 Dan Muey <dan@cpanel.net> - 1.4.2-2
+- ZC-9589: Update DISABLE_BUILD to match OBS
+
 * Wed Jan 22 2020 Cory McIntire <cory@cpanel.net> - 1.4.2-1
 - EA-8847: Update scl-ruby24-rubygem-sqlite3 from v1.3.13 to v1.4.2
 
