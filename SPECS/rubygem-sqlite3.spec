@@ -1,3 +1,5 @@
+%define debug_package %{nil}
+
 # Defining the package namespace
 %global ns_name ea
 %global ns_dir /opt/cpanel
